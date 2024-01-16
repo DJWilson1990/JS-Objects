@@ -36,4 +36,42 @@ const bestAlbumEver = {
     "The Dark Side of the Moon is a concept album by English rock band Pink Floyd, released March 1st, 1973",
 };
 console.log(bestAlbumEver); //outputs band album and description
-console.log(bestAlbumEver.description); //outputs jsut the description.
+console.log(bestAlbumEver.description); //outputs the description.
+
+//COMPLEX OBJECTS
+
+const myBio = {
+  title: "My bio",
+  author: {
+    fName: "Dan",
+    age: "33",
+    occupation: [
+      "Ski instructor",
+      "Kitesurf instructor",
+      "future JS developer",
+    ],
+  },
+  tags: ["First name", "Age", "jobs"],
+  content: "This is a short bio",
+};
+
+console.log(myBio.title); // output My bio
+console.log(myBio.author.fName); // output Dan
+console.log(myBio.author.occupation); // output lists all occupations
+console.log(myBio.author.occupation[0]); // output ski instructor
+console.log(myBio.author); //output Dan 33 occupation [ski instrucot, kitesurf instructor, future JS developer]
+console.log(myBio.tags.length); //outputs 3. there are 3 tags in the tags array
+
+//combined with a loop
+console.log(`There are ${myBio.tags.length} tags for "${myBio.title}":`); // need to use ` back ticks. output reads :There are 3 tags for "My bio"
+for (let i = 0; i < myBio.tags.length; i++) {
+  console.log(myBio.tags[i]);
+}
+//output: First name Age jobs (from the tags section)
+
+// can use a for of loop if dont need the index
+
+console.log(`Tags for post "${myBio.title}":`); // output: Tags for post "My bio":
+for (let tag of myBio.tags) {
+  console.log(tag);
+} // output First name Age jobs
